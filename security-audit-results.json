@@ -1,0 +1,831 @@
+{
+  "timestamp": "2025-07-11T03:06:48.580Z",
+  "vulnerabilities": [
+    {
+      "package": "jsonpath-plus",
+      "versions": [
+        "3.4.0",
+        "10.3.0",
+        "0.20.0",
+        "1.1.2",
+        "1.20.0",
+        "0.2.3"
+      ],
+      "secureVersion": "10.3.0",
+      "cves": [
+        "CVE-2024-21534",
+        "CVE-2025-1302"
+      ]
+    },
+    {
+      "package": "koa",
+      "versions": [
+        "0.9.1",
+        "2.16.1"
+      ],
+      "secureVersion": "2.16.1",
+      "cves": [
+        "CVE-2025-32379"
+      ]
+    },
+    {
+      "package": "tough-cookie",
+      "versions": [
+        "20.0.3",
+        "4.1.4",
+        "4.1.3",
+        "26.1.0",
+        "2.88.2"
+      ],
+      "secureVersion": "4.1.3",
+      "cves": [
+        "CVE-2023-26136"
+      ]
+    }
+  ],
+  "secureVersions": {
+    "jsonpath-plus": [
+      "3.4.0",
+      "10.3.0",
+      "0.20.0",
+      "1.1.2",
+      "1.20.0",
+      "0.2.3"
+    ],
+    "koa": [
+      "0.9.1",
+      "2.16.1"
+    ],
+    "prismjs": [
+      "15.6.1",
+      "1.30.0",
+      "3.6.0"
+    ],
+    "tough-cookie": [
+      "20.0.3",
+      "4.1.4",
+      "4.1.3",
+      "26.1.0",
+      "2.88.2"
+    ]
+  },
+  "githubAlerts": [
+    {
+      "auto_dismissed_at": null,
+      "created_at": "2025-07-11T02:44:00Z",
+      "dependency": {
+        "manifest_path": "yarn.lock",
+        "package": {
+          "ecosystem": "npm",
+          "name": "koa"
+        },
+        "relationship": "transitive",
+        "scope": "development"
+      },
+      "dismissed_at": null,
+      "dismissed_by": null,
+      "dismissed_comment": null,
+      "dismissed_reason": null,
+      "fixed_at": null,
+      "html_url": "https://github.com/larralapid/personal-backstage/security/dependabot/9",
+      "number": 9,
+      "security_advisory": {
+        "cve_id": "CVE-2025-32379",
+        "cvss": {
+          "score": 5,
+          "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L"
+        },
+        "cvss_severities": {
+          "cvss_v3": {
+            "score": 5,
+            "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L"
+          },
+          "cvss_v4": {
+            "score": 0,
+            "vector_string": null
+          }
+        },
+        "cwes": [
+          {
+            "cwe_id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          }
+        ],
+        "description": "### Summary\nIn koa < 2.16.1 and < 3.0.0-alpha.5, passing untrusted user input to ctx.redirect() even after sanitizing it, may execute javascript code on the user who use the app.\n\n### Patches\nThis issue is patched in  2.16.1 and 3.0.0-alpha.5.\n\n### PoC\nComing soon...\n\n### Impact\n1. Redirect user to another phishing site\n2. Make request to another endpoint of the application based on user's cookie\n3. Steal user's cookie",
+        "epss": {
+          "percentage": 0.00045,
+          "percentile": 0.13675
+        },
+        "ghsa_id": "GHSA-x2rg-q646-7m2v",
+        "identifiers": [
+          {
+            "type": "GHSA",
+            "value": "GHSA-x2rg-q646-7m2v"
+          },
+          {
+            "type": "CVE",
+            "value": "CVE-2025-32379"
+          }
+        ],
+        "published_at": "2025-04-09T13:00:07Z",
+        "references": [
+          {
+            "url": "https://github.com/koajs/koa/security/advisories/GHSA-x2rg-q646-7m2v"
+          },
+          {
+            "url": "https://github.com/koajs/koa/commit/ff25eb4a7f2392df46481fe86355161067687312"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-32379"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-x2rg-q646-7m2v"
+          }
+        ],
+        "severity": "medium",
+        "summary": "Koajs vulnerable to Cross-Site Scripting (XSS) at ctx.redirect() function",
+        "updated_at": "2025-04-09T20:29:45Z",
+        "vulnerabilities": [
+          {
+            "first_patched_version": {
+              "identifier": "2.16.1"
+            },
+            "package": {
+              "ecosystem": "npm",
+              "name": "koa"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "< 2.16.1"
+          },
+          {
+            "first_patched_version": {
+              "identifier": "3.0.0-alpha.5"
+            },
+            "package": {
+              "ecosystem": "npm",
+              "name": "koa"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": ">= 3.0.0-alpha.1, < 3.0.0-alpha.5"
+          }
+        ],
+        "withdrawn_at": null
+      },
+      "security_vulnerability": {
+        "first_patched_version": {
+          "identifier": "2.16.1"
+        },
+        "package": {
+          "ecosystem": "npm",
+          "name": "koa"
+        },
+        "severity": "medium",
+        "vulnerable_version_range": "< 2.16.1"
+      },
+      "state": "open",
+      "updated_at": "2025-07-11T02:44:00Z",
+      "url": "https://api.github.com/repos/larralapid/personal-backstage/dependabot/alerts/9"
+    },
+    {
+      "auto_dismissed_at": null,
+      "created_at": "2025-07-11T02:44:00Z",
+      "dependency": {
+        "manifest_path": "yarn.lock",
+        "package": {
+          "ecosystem": "npm",
+          "name": "prismjs"
+        },
+        "relationship": "transitive",
+        "scope": "runtime"
+      },
+      "dismissed_at": null,
+      "dismissed_by": null,
+      "dismissed_comment": null,
+      "dismissed_reason": null,
+      "fixed_at": null,
+      "html_url": "https://github.com/larralapid/personal-backstage/security/dependabot/8",
+      "number": 8,
+      "security_advisory": {
+        "cve_id": "CVE-2024-53382",
+        "cvss": {
+          "score": 4.9,
+          "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:N"
+        },
+        "cvss_severities": {
+          "cvss_v3": {
+            "score": 4.9,
+            "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:N"
+          },
+          "cvss_v4": {
+            "score": 0,
+            "vector_string": null
+          }
+        },
+        "cwes": [
+          {
+            "cwe_id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          },
+          {
+            "cwe_id": "CWE-94",
+            "name": "Improper Control of Generation of Code ('Code Injection')"
+          }
+        ],
+        "description": "Prism (aka PrismJS) through 1.29.0 allows DOM Clobbering (with resultant XSS for untrusted input that contains HTML but does not directly contain JavaScript), because document.currentScript lookup can be shadowed by attacker-injected HTML elements.",
+        "epss": {
+          "percentage": 0.00054,
+          "percentile": 0.16801
+        },
+        "ghsa_id": "GHSA-x7hr-w5r2-h6wg",
+        "identifiers": [
+          {
+            "type": "GHSA",
+            "value": "GHSA-x7hr-w5r2-h6wg"
+          },
+          {
+            "type": "CVE",
+            "value": "CVE-2024-53382"
+          }
+        ],
+        "published_at": "2025-03-03T09:30:34Z",
+        "references": [
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-53382"
+          },
+          {
+            "url": "https://gist.github.com/jackfromeast/aeb128e44f05f95828a1a824708df660"
+          },
+          {
+            "url": "https://github.com/PrismJS/prism/blob/59e5a3471377057de1f401ba38337aca27b80e03/prism.js#L226-L259"
+          },
+          {
+            "url": "https://github.com/PrismJS/prism/pull/3863"
+          },
+          {
+            "url": "https://github.com/PrismJS/prism/commit/8e8b9352dac64457194dd9e51096b4772532e53d"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-x7hr-w5r2-h6wg"
+          }
+        ],
+        "severity": "medium",
+        "summary": "PrismJS DOM Clobbering vulnerability",
+        "updated_at": "2025-06-30T12:51:20Z",
+        "vulnerabilities": [
+          {
+            "first_patched_version": {
+              "identifier": "1.30.0"
+            },
+            "package": {
+              "ecosystem": "npm",
+              "name": "prismjs"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "< 1.30.0"
+          }
+        ],
+        "withdrawn_at": null
+      },
+      "security_vulnerability": {
+        "first_patched_version": {
+          "identifier": "1.30.0"
+        },
+        "package": {
+          "ecosystem": "npm",
+          "name": "prismjs"
+        },
+        "severity": "medium",
+        "vulnerable_version_range": "< 1.30.0"
+      },
+      "state": "open",
+      "updated_at": "2025-07-11T02:44:00Z",
+      "url": "https://api.github.com/repos/larralapid/personal-backstage/dependabot/alerts/8"
+    },
+    {
+      "auto_dismissed_at": null,
+      "created_at": "2025-07-11T02:44:00Z",
+      "dependency": {
+        "manifest_path": "yarn.lock",
+        "package": {
+          "ecosystem": "npm",
+          "name": "jsonpath-plus"
+        },
+        "relationship": "transitive",
+        "scope": "runtime"
+      },
+      "dismissed_at": null,
+      "dismissed_by": null,
+      "dismissed_comment": null,
+      "dismissed_reason": null,
+      "fixed_at": null,
+      "html_url": "https://github.com/larralapid/personal-backstage/security/dependabot/7",
+      "number": 7,
+      "security_advisory": {
+        "cve_id": "CVE-2025-1302",
+        "cvss": {
+          "score": 9.8,
+          "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss_severities": {
+          "cvss_v3": {
+            "score": 9.8,
+            "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "cvss_v4": {
+            "score": 8.9,
+            "vector_string": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P"
+          }
+        },
+        "cwes": [
+          {
+            "cwe_id": "CWE-94",
+            "name": "Improper Control of Generation of Code ('Code Injection')"
+          }
+        ],
+        "description": "Versions of the package jsonpath-plus before 10.3.0 are vulnerable to Remote Code Execution (RCE) due to improper input sanitization. An attacker can execute aribitrary code on the system by exploiting the unsafe default usage of eval='safe' mode.\n\n**Note:**\n\nThis is caused by an incomplete fix for CVE-2024-21534.",
+        "epss": {
+          "percentage": 0.34846,
+          "percentile": 0.96796
+        },
+        "ghsa_id": "GHSA-hw8r-x6gr-5gjp",
+        "identifiers": [
+          {
+            "type": "GHSA",
+            "value": "GHSA-hw8r-x6gr-5gjp"
+          },
+          {
+            "type": "CVE",
+            "value": "CVE-2025-1302"
+          }
+        ],
+        "published_at": "2025-02-15T06:30:51Z",
+        "references": [
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1302"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/commit/30942896d27cb8a806b965a5ca9ef9f686be24ee"
+          },
+          {
+            "url": "https://gist.github.com/nickcopi/11ba3cb4fdee6f89e02e6afae8db6456"
+          },
+          {
+            "url": "https://security.snyk.io/vuln/SNYK-JS-JSONPATHPLUS-8719585"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-21534"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/blob/8e4acf8aff5f446aa66323e12394ac5615c3b260/src/Safe-Script.js#L127"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-hw8r-x6gr-5gjp"
+          }
+        ],
+        "severity": "high",
+        "summary": "JSONPath Plus allows Remote Code Execution",
+        "updated_at": "2025-02-18T19:25:35Z",
+        "vulnerabilities": [
+          {
+            "first_patched_version": {
+              "identifier": "10.3.0"
+            },
+            "package": {
+              "ecosystem": "npm",
+              "name": "jsonpath-plus"
+            },
+            "severity": "high",
+            "vulnerable_version_range": "< 10.3.0"
+          }
+        ],
+        "withdrawn_at": null
+      },
+      "security_vulnerability": {
+        "first_patched_version": {
+          "identifier": "10.3.0"
+        },
+        "package": {
+          "ecosystem": "npm",
+          "name": "jsonpath-plus"
+        },
+        "severity": "high",
+        "vulnerable_version_range": "< 10.3.0"
+      },
+      "state": "open",
+      "updated_at": "2025-07-11T02:44:00Z",
+      "url": "https://api.github.com/repos/larralapid/personal-backstage/dependabot/alerts/7"
+    },
+    {
+      "auto_dismissed_at": null,
+      "created_at": "2025-07-11T02:44:00Z",
+      "dependency": {
+        "manifest_path": "yarn.lock",
+        "package": {
+          "ecosystem": "npm",
+          "name": "jsonpath-plus"
+        },
+        "relationship": "transitive",
+        "scope": "runtime"
+      },
+      "dismissed_at": null,
+      "dismissed_by": null,
+      "dismissed_comment": null,
+      "dismissed_reason": null,
+      "fixed_at": null,
+      "html_url": "https://github.com/larralapid/personal-backstage/security/dependabot/3",
+      "number": 3,
+      "security_advisory": {
+        "cve_id": "CVE-2024-21534",
+        "cvss": {
+          "score": 9.8,
+          "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss_severities": {
+          "cvss_v3": {
+            "score": 9.8,
+            "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "cvss_v4": {
+            "score": 9.3,
+            "vector_string": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+          }
+        },
+        "cwes": [
+          {
+            "cwe_id": "CWE-94",
+            "name": "Improper Control of Generation of Code ('Code Injection')"
+          }
+        ],
+        "description": "Versions of the package jsonpath-plus before 10.0.7 are vulnerable to Remote Code Execution (RCE) due to improper input sanitization. An attacker can execute aribitrary code on the system by exploiting the unsafe default usage of vm in Node.\n\n**Note:**\n\nThere were several attempts to fix it in versions [10.0.0-10.1.0](https://github.com/JSONPath-Plus/JSONPath/compare/v9.0.0...v10.1.0) but it could still be exploited using [different payloads](https://github.com/JSONPath-Plus/JSONPath/issues/226)",
+        "epss": {
+          "percentage": 0.45979,
+          "percentile": 0.97483
+        },
+        "ghsa_id": "GHSA-pppg-cpfq-h7wr",
+        "identifiers": [
+          {
+            "type": "GHSA",
+            "value": "GHSA-pppg-cpfq-h7wr"
+          },
+          {
+            "type": "CVE",
+            "value": "CVE-2024-21534"
+          }
+        ],
+        "published_at": "2024-10-11T15:30:32Z",
+        "references": [
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-21534"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/commit/6b2f1b4c234292c75912b790bf7e2d7339d4ccd3"
+          },
+          {
+            "url": "https://security.snyk.io/vuln/SNYK-JS-JSONPATHPLUS-7945884"
+          },
+          {
+            "url": "https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-8185019"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/issues/226"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/commit/b70aa713553caf838a63bac923195a5bc541fd72"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/issues/226#issuecomment-2424230316"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/compare/v9.0.0...v10.1.0"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/pull/233"
+          },
+          {
+            "url": "https://github.com/JSONPath-Plus/JSONPath/commit/73ad72e5ee788d8287dea6e8283a3f16f63c9eb8"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-pppg-cpfq-h7wr"
+          }
+        ],
+        "severity": "critical",
+        "summary": "JSONPath Plus Remote Code Execution (RCE) Vulnerability",
+        "updated_at": "2025-02-06T19:11:00Z",
+        "vulnerabilities": [
+          {
+            "first_patched_version": null,
+            "package": {
+              "ecosystem": "maven",
+              "name": "org.webjars.npm:jsonpath-plus"
+            },
+            "severity": "critical",
+            "vulnerable_version_range": "<= 6.0.1"
+          },
+          {
+            "first_patched_version": {
+              "identifier": "10.2.0"
+            },
+            "package": {
+              "ecosystem": "npm",
+              "name": "jsonpath-plus"
+            },
+            "severity": "critical",
+            "vulnerable_version_range": "< 10.2.0"
+          }
+        ],
+        "withdrawn_at": null
+      },
+      "security_vulnerability": {
+        "first_patched_version": {
+          "identifier": "10.2.0"
+        },
+        "package": {
+          "ecosystem": "npm",
+          "name": "jsonpath-plus"
+        },
+        "severity": "critical",
+        "vulnerable_version_range": "< 10.2.0"
+      },
+      "state": "open",
+      "updated_at": "2025-07-11T02:44:00Z",
+      "url": "https://api.github.com/repos/larralapid/personal-backstage/dependabot/alerts/3"
+    },
+    {
+      "auto_dismissed_at": null,
+      "created_at": "2025-07-11T02:44:00Z",
+      "dependency": {
+        "manifest_path": "yarn.lock",
+        "package": {
+          "ecosystem": "npm",
+          "name": "tough-cookie"
+        },
+        "relationship": "transitive",
+        "scope": "runtime"
+      },
+      "dismissed_at": null,
+      "dismissed_by": null,
+      "dismissed_comment": null,
+      "dismissed_reason": null,
+      "fixed_at": null,
+      "html_url": "https://github.com/larralapid/personal-backstage/security/dependabot/2",
+      "number": 2,
+      "security_advisory": {
+        "cve_id": "CVE-2023-26136",
+        "cvss": {
+          "score": 6.5,
+          "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss_severities": {
+          "cvss_v3": {
+            "score": 6.5,
+            "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+          },
+          "cvss_v4": {
+            "score": 0,
+            "vector_string": null
+          }
+        },
+        "cwes": [
+          {
+            "cwe_id": "CWE-1321",
+            "name": "Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+          }
+        ],
+        "description": "Versions of the package tough-cookie before 4.1.3 are vulnerable to Prototype Pollution due to improper handling of Cookies when using CookieJar in `rejectPublicSuffixes=false` mode. This issue arises from the manner in which the objects are initialized.",
+        "epss": {
+          "percentage": 0.05191,
+          "percentile": 0.89313
+        },
+        "ghsa_id": "GHSA-72xf-g2v4-qvf3",
+        "identifiers": [
+          {
+            "type": "GHSA",
+            "value": "GHSA-72xf-g2v4-qvf3"
+          },
+          {
+            "type": "CVE",
+            "value": "CVE-2023-26136"
+          }
+        ],
+        "published_at": "2023-07-01T06:30:16Z",
+        "references": [
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-26136"
+          },
+          {
+            "url": "https://github.com/salesforce/tough-cookie/issues/282"
+          },
+          {
+            "url": "https://github.com/salesforce/tough-cookie/commit/12d474791bb856004e858fdb1c47b7608d09cf6e"
+          },
+          {
+            "url": "https://github.com/salesforce/tough-cookie/releases/tag/v4.1.3"
+          },
+          {
+            "url": "https://security.snyk.io/vuln/SNYK-JS-TOUGHCOOKIE-5672873"
+          },
+          {
+            "url": "https://lists.debian.org/debian-lts-announce/2023/07/msg00010.html"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3HUE6ZR5SL73KHL7XUPAOEL6SB7HUDT2"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PVVPNSAGSDS63HQ74PJ7MZ3MU5IYNVZ"
+          },
+          {
+            "url": "https://security.netapp.com/advisory/ntap-20240621-0006"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-72xf-g2v4-qvf3"
+          }
+        ],
+        "severity": "medium",
+        "summary": "tough-cookie Prototype Pollution vulnerability",
+        "updated_at": "2024-06-21T21:33:53Z",
+        "vulnerabilities": [
+          {
+            "first_patched_version": {
+              "identifier": "4.1.3"
+            },
+            "package": {
+              "ecosystem": "npm",
+              "name": "tough-cookie"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "< 4.1.3"
+          }
+        ],
+        "withdrawn_at": null
+      },
+      "security_vulnerability": {
+        "first_patched_version": {
+          "identifier": "4.1.3"
+        },
+        "package": {
+          "ecosystem": "npm",
+          "name": "tough-cookie"
+        },
+        "severity": "medium",
+        "vulnerable_version_range": "< 4.1.3"
+      },
+      "state": "open",
+      "updated_at": "2025-07-11T02:44:00Z",
+      "url": "https://api.github.com/repos/larralapid/personal-backstage/dependabot/alerts/2"
+    },
+    {
+      "auto_dismissed_at": null,
+      "created_at": "2025-07-11T02:44:00Z",
+      "dependency": {
+        "manifest_path": "yarn.lock",
+        "package": {
+          "ecosystem": "npm",
+          "name": "request"
+        },
+        "relationship": "transitive",
+        "scope": "runtime"
+      },
+      "dismissed_at": null,
+      "dismissed_by": null,
+      "dismissed_comment": null,
+      "dismissed_reason": null,
+      "fixed_at": null,
+      "html_url": "https://github.com/larralapid/personal-backstage/security/dependabot/1",
+      "number": 1,
+      "security_advisory": {
+        "cve_id": "CVE-2023-28155",
+        "cvss": {
+          "score": 6.1,
+          "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss_severities": {
+          "cvss_v3": {
+            "score": 6.1,
+            "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "cvss_v4": {
+            "score": 0,
+            "vector_string": null
+          }
+        },
+        "cwes": [
+          {
+            "cwe_id": "CWE-918",
+            "name": "Server-Side Request Forgery (SSRF)"
+          }
+        ],
+        "description": "The `request` package through 2.88.2 for Node.js and the `@cypress/request` package prior to 3.0.0 allow a bypass of SSRF mitigations via an attacker-controller server that does a cross-protocol redirect (HTTP to HTTPS, or HTTPS to HTTP).\n\nNOTE: The `request` package is no longer supported by the maintainer.",
+        "epss": {
+          "percentage": 0.00605,
+          "percentile": 0.68578
+        },
+        "ghsa_id": "GHSA-p8p7-x288-28g6",
+        "identifiers": [
+          {
+            "type": "GHSA",
+            "value": "GHSA-p8p7-x288-28g6"
+          },
+          {
+            "type": "CVE",
+            "value": "CVE-2023-28155"
+          }
+        ],
+        "published_at": "2023-03-16T15:30:19Z",
+        "references": [
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28155"
+          },
+          {
+            "url": "https://github.com/request/request/issues/3442"
+          },
+          {
+            "url": "https://github.com/request/request/pull/3444"
+          },
+          {
+            "url": "https://doyensec.com/resources/Doyensec_Advisory_RequestSSRF_Q12023.pdf"
+          },
+          {
+            "url": "https://github.com/github/advisory-database/pull/2500"
+          },
+          {
+            "url": "https://github.com/cypress-io/request/blob/master/lib/redirect.js#L116"
+          },
+          {
+            "url": "https://github.com/request/request/blob/master/lib/redirect.js#L111"
+          },
+          {
+            "url": "https://github.com/cypress-io/request/pull/28"
+          },
+          {
+            "url": "https://github.com/cypress-io/request/commit/c5bcf21d40fb61feaff21a0e5a2b3934a440024f"
+          },
+          {
+            "url": "https://github.com/cypress-io/request/releases/tag/v3.0.0"
+          },
+          {
+            "url": "https://security.netapp.com/advisory/ntap-20230413-0007"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-p8p7-x288-28g6"
+          }
+        ],
+        "severity": "medium",
+        "summary": "Server-Side Request Forgery in Request",
+        "updated_at": "2024-03-21T17:47:21Z",
+        "vulnerabilities": [
+          {
+            "first_patched_version": null,
+            "package": {
+              "ecosystem": "npm",
+              "name": "request"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "<= 2.88.2"
+          },
+          {
+            "first_patched_version": {
+              "identifier": "3.0.0"
+            },
+            "package": {
+              "ecosystem": "npm",
+              "name": "@cypress/request"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "<= 2.88.12"
+          }
+        ],
+        "withdrawn_at": null
+      },
+      "security_vulnerability": {
+        "first_patched_version": null,
+        "package": {
+          "ecosystem": "npm",
+          "name": "request"
+        },
+        "severity": "medium",
+        "vulnerable_version_range": "<= 2.88.2"
+      },
+      "state": "open",
+      "updated_at": "2025-07-11T02:44:00Z",
+      "url": "https://api.github.com/repos/larralapid/personal-backstage/dependabot/alerts/1"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Update vulnerable dependencies",
+      "description": "Some dependencies are still using vulnerable versions"
+    },
+    {
+      "priority": "medium",
+      "action": "Review GitHub Dependabot alerts",
+      "description": "Check and address any remaining security alerts"
+    },
+    {
+      "priority": "low",
+      "action": "Set up automated security monitoring",
+      "description": "Consider using GitHub Actions or similar for continuous security monitoring"
+    }
+  ],
+  "status": "vulnerable"
+}
