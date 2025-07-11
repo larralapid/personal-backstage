@@ -1,4 +1,4 @@
-# Personal Infrastructure Hub
+# Self Catalog Infrastructure Hub
 
 This is your personal Backstage instance configured for managing your solo infrastructure, workflows, and data tracking.
 

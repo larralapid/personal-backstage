@@ -30032,19 +30032,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root@workspace:."
-  dependencies:
-    "@backstage/cli": "npm:^0.33.0"
-    "@backstage/e2e-test-utils": "npm:^0.1.1"
-    "@playwright/test": "npm:^1.32.3"
-    node-gyp: "npm:^10.0.0"
-    prettier: "npm:^2.3.2"
-    typescript: "npm:~5.8.0"
-  languageName: unknown
-  linkType: soft
-
 "rrweb-cssom@npm:^0.8.0":
   version: 0.8.0
   resolution: "rrweb-cssom@npm:0.8.0"
@@ -30266,6 +30253,19 @@ __metadata:
   checksum: 10c0/01cc52edd29feddaf379efb4328aededa633f0ac43c64b11a8abd075ff34f05b0d280882c4fbcbdf1a0658202c9cd2ea8d5985174dcf9a2dac7e3a4996fa9b67
   languageName: node
   linkType: hard
+
+"self-catalog@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "self-catalog@workspace:."
+  dependencies:
+    "@backstage/cli": "npm:^0.33.0"
+    "@backstage/e2e-test-utils": "npm:^0.1.1"
+    "@playwright/test": "npm:^1.32.3"
+    node-gyp: "npm:^10.0.0"
+    prettier: "npm:^2.3.2"
+    typescript: "npm:~5.8.0"
+  languageName: unknown
+  linkType: soft
 
 "selfsigned@npm:^2.0.0, selfsigned@npm:^2.4.1":
   version: 2.4.1
