@@ -1,0 +1,203 @@
+---
+# Data Index Templates for Active vs Passive Data
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: active-data-record
+  title: Active Data Record
+  description: Template for creating records of actively generated data
+  tags:
+    - data
+    - active
+    - content-creation
+spec:
+  owner: user:personal
+  type: resource
+  parameters:
+    - title: Data Information
+      required:
+        - name
+        - dataType
+        - location
+        - description
+      properties:
+        name:
+          title: Data Name
+          type: string
+          description: Name of the data record
+        dataType:
+          title: Data Type
+          type: string
+          enum:
+            - blog-post
+            - article
+            - code-project
+            - documentation
+            - video
+            - image
+            - design
+            - presentation
+            - note
+            - journal-entry
+          description: Type of actively created data
+        location:
+          title: Data Location
+          type: string
+          description: Where the data is stored (URL, file path, platform)
+        description:
+          title: Description
+          type: string
+          description: Brief description of the data
+        platform:
+          title: Platform
+          type: string
+          description: Platform where data was created (e.g., Medium, GitHub, Figma)
+        tags:
+          title: Tags
+          type: array
+          items:
+            type: string
+          description: Tags for categorization
+  steps:
+    - id: create-record
+      name: Create Data Record
+      action: catalog:register
+      input:
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: Resource
+          metadata:
+            name: ${{ parameters.name }}
+            description: ${{ parameters.description }}
+            tags: ${{ parameters.tags }}
+            annotations:
+              data.type: "active"
+              data.platform: ${{ parameters.platform }}
+              data.location: ${{ parameters.location }}
+          spec:
+            type: ${{ parameters.dataType }}
+            owner: user:personal
+            system: data-management
+---
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: passive-data-record
+  title: Passive Data Record
+  description: Template for creating records of passively logged data
+  tags:
+    - data
+    - passive
+    - activity-log
+spec:
+  owner: user:personal
+  type: resource
+  parameters:
+    - title: Data Information
+      required:
+        - name
+        - dataType
+        - source
+        - description
+      properties:
+        name:
+          title: Data Name
+          type: string
+          description: Name of the data record
+        dataType:
+          title: Data Type
+          type: string
+          enum:
+            - music-listen
+            - video-watch
+            - location-visit
+            - purchase
+            - fitness-activity
+            - social-interaction
+            - app-usage
+            - web-browsing
+            - system-log
+            - sensor-data
+          description: Type of passively logged data
+        source:
+          title: Data Source
+          type: string
+          description: Source of the passive data (e.g., Spotify, Apple Health, Google)
+        description:
+          title: Description
+          type: string
+          description: Brief description of the data
+        frequency:
+          title: Logging Frequency
+          type: string
+          enum:
+            - real-time
+            - daily
+            - weekly
+            - monthly
+            - on-demand
+          description: How often this data is logged
+        tags:
+          title: Tags
+          type: array
+          items:
+            type: string
+          description: Tags for categorization
+  steps:
+    - id: create-record
+      name: Create Data Record
+      action: catalog:register
+      input:
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: Resource
+          metadata:
+            name: ${{ parameters.name }}
+            description: ${{ parameters.description }}
+            tags: ${{ parameters.tags }}
+            annotations:
+              data.type: "passive"
+              data.source: ${{ parameters.source }}
+              data.frequency: ${{ parameters.frequency }}
+          spec:
+            type: ${{ parameters.dataType }}
+            owner: user:personal
+            system: data-management
+---
+# Example Active Data Records
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: techplug-blog-posts
+  description: "Blog posts created on techplug.solutions"
+  tags:
+    - blog
+    - content
+    - active
+  annotations:
+    data.type: "active"
+    data.platform: "techplug.solutions"
+    data.location: "https://techplug.solutions/posts"
+spec:
+  type: blog-post
+  owner: user:personal
+  system: data-management
+---
+# Example Passive Data Records
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: spotify-listening-history
+  description: "Music listening history from Spotify"
+  tags:
+    - music
+    - listening
+    - passive
+  annotations:
+    data.type: "passive"
+    data.source: "Spotify"
+    data.frequency: "real-time"
+spec:
+  type: music-listen
+  owner: user:personal
+  system: data-management

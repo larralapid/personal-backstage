@@ -1,0 +1,21 @@
+---
+# Personal Organization Structure
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: personal
+  description: "Personal user account"
+spec:
+  profile:
+    displayName: "Personal User"
+    email: "personal@example.com"
+  memberOf: [personal-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: personal-team
+  description: "Personal team for solo projects"
+spec:
+  type: team
+  children: []

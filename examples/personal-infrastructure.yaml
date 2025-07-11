@@ -1,0 +1,178 @@
+---
+# Personal Infrastructure System
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: personal-infrastructure
+  description: "Personal infrastructure management system"
+spec:
+  owner: user:personal
+---
+# Data Management System
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: data-management
+  description: "Personal data tracking and indexing system"
+spec:
+  owner: user:personal
+---
+# Workflow Management System
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: workflow-management
+  description: "Personal workflow and automation tracking"
+spec:
+  owner: user:personal
+---
+# Projects - Desktop Directory
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: desktop-projects
+  description: "Collection of personal projects on desktop"
+  annotations:
+    backstage.io/source-location: "file:///Users/larralapid/Desktop"
+spec:
+  type: library
+  lifecycle: production
+  owner: user:personal
+  system: personal-infrastructure
+  tags:
+    - projects
+    - development
+---
+# Quartz Static Site
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: quartz-site
+  description: "Personal static site generator using Quartz"
+  annotations:
+    backstage.io/source-location: "file:///Users/larralapid/Desktop/quartz"
+spec:
+  type: website
+  lifecycle: production
+  owner: user:personal
+  system: personal-infrastructure
+  tags:
+    - static-site
+    - documentation
+---
+# Tech Solutions Website
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: techplug-solutions
+  description: "Personal tech solutions website"
+  annotations:
+    backstage.io/source-location: "file:///Users/larralapid/Desktop/techplug.solutions"
+spec:
+  type: website
+  lifecycle: production
+  owner: user:personal
+  system: personal-infrastructure
+  tags:
+    - portfolio
+    - nextjs
+---
+# Voter Reconciliation API
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: voter-recon-api
+  description: "Voter reconciliation API service"
+  annotations:
+    backstage.io/source-location: "file:///Users/larralapid/Desktop/voter-recon"
+spec:
+  type: service
+  lifecycle: production
+  owner: user:personal
+  system: personal-infrastructure
+  tags:
+    - api
+    - civic-tech
+---
+# Resume Generator
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: resume-generator
+  description: "Python-based resume PDF generator"
+  annotations:
+    backstage.io/source-location: "file:///Users/larralapid/Desktop/rezzy"
+spec:
+  type: service
+  lifecycle: production
+  owner: user:personal
+  system: personal-infrastructure
+  tags:
+    - python
+    - pdf-generation
+---
+# Data Index Resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: congress-api-data
+  description: "Congress API data JSON file"
+spec:
+  type: dataset
+  owner: user:personal
+  system: data-management
+  tags:
+    - json
+    - api-data
+    - government
+---
+# MCP Testing Data
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nyc-transit-data
+  description: "NYC boroughs transit CSV data"
+spec:
+  type: dataset
+  owner: user:personal
+  system: data-management
+  tags:
+    - csv
+    - transit
+    - nyc
+---
+# Personal Data Workflows
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: personal-workflows
+  description: "Personal automation and workflow scripts"
+  annotations:
+    backstage.io/source-location: "file:///Users/larralapid/Desktop/daddyrepo"
+spec:
+  type: service
+  lifecycle: production
+  owner: user:personal
+  system: workflow-management
+  tags:
+    - automation
+    - scripts
+    - workflows
+---
+# Daily Logging System
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: daily-logging
+  description: "Daily notes and logging system"
+  annotations:
+    backstage.io/source-location: "file:///Users/larralapid/Desktop/didlog"
+spec:
+  type: service
+  lifecycle: production
+  owner: user:personal
+  system: workflow-management
+  tags:
+    - logging
+    - notes
+    - daily

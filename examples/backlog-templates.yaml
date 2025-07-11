@@ -1,0 +1,212 @@
+---
+# Backlog Item Template
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: backlog-item
+  title: Backlog Item
+  description: Template for creating backlog items and tasks
+  tags:
+    - backlog
+    - task
+    - project-management
+spec:
+  owner: user:personal
+  type: component
+  parameters:
+    - title: Task Information
+      required:
+        - name
+        - priority
+        - description
+      properties:
+        name:
+          title: Task Name
+          type: string
+          description: Name of the backlog item
+        priority:
+          title: Priority
+          type: string
+          enum:
+            - critical
+            - high
+            - medium
+            - low
+          description: Priority level
+        description:
+          title: Description
+          type: string
+          description: Detailed description of the task
+        project:
+          title: Related Project
+          type: string
+          description: Which project this task belongs to
+        estimatedHours:
+          title: Estimated Hours
+          type: number
+          description: Estimated time to complete
+        tags:
+          title: Tags
+          type: array
+          items:
+            type: string
+          description: Tags for categorization
+        dependencies:
+          title: Dependencies
+          type: array
+          items:
+            type: string
+          description: Other tasks this depends on
+  steps:
+    - id: create-backlog-item
+      name: Create Backlog Item
+      action: catalog:register
+      input:
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: ${{ parameters.name }}
+            description: ${{ parameters.description }}
+            tags: ${{ parameters.tags }}
+            annotations:
+              backlog.priority: ${{ parameters.priority }}
+              backlog.project: ${{ parameters.project }}
+              backlog.estimatedHours: ${{ parameters.estimatedHours }}
+              backlog.dependencies: ${{ parameters.dependencies }}
+          spec:
+            type: task
+            lifecycle: planning
+            owner: user:personal
+            system: workflow-management
+---
+# Changelog Template
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: changelog-entry
+  title: Changelog Entry
+  description: Template for creating changelog entries
+  tags:
+    - changelog
+    - documentation
+    - release
+spec:
+  owner: user:personal
+  type: resource
+  parameters:
+    - title: Change Information
+      required:
+        - name
+        - version
+        - changeType
+        - description
+      properties:
+        name:
+          title: Change Name
+          type: string
+          description: Name of the change
+        version:
+          title: Version
+          type: string
+          description: Version number or date
+        changeType:
+          title: Change Type
+          type: string
+          enum:
+            - feature
+            - bugfix
+            - enhancement
+            - breaking-change
+            - deprecation
+            - security
+          description: Type of change
+        description:
+          title: Description
+          type: string
+          description: Detailed description of the change
+        project:
+          title: Related Project
+          type: string
+          description: Which project this change belongs to
+        tags:
+          title: Tags
+          type: array
+          items:
+            type: string
+          description: Tags for categorization
+  steps:
+    - id: create-changelog-entry
+      name: Create Changelog Entry
+      action: catalog:register
+      input:
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: Resource
+          metadata:
+            name: ${{ parameters.name }}
+            description: ${{ parameters.description }}
+            tags: ${{ parameters.tags }}
+            annotations:
+              changelog.version: ${{ parameters.version }}
+              changelog.type: ${{ parameters.changeType }}
+              changelog.project: ${{ parameters.project }}
+          spec:
+            type: changelog
+            owner: user:personal
+            system: workflow-management
+---
+# Example Backlog Items
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: implement-dark-mode
+  description: "Add dark mode toggle to techplug.solutions"
+  tags:
+    - frontend
+    - enhancement
+  annotations:
+    backlog.priority: "medium"
+    backlog.project: "techplug.solutions"
+    backlog.estimatedHours: "4"
+spec:
+  type: task
+  lifecycle: planning
+  owner: user:personal
+  system: workflow-management
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: optimize-resume-generator
+  description: "Improve PDF generation performance in resume generator"
+  tags:
+    - python
+    - optimization
+  annotations:
+    backlog.priority: "low"
+    backlog.project: "rezzy"
+    backlog.estimatedHours: "2"
+spec:
+  type: task
+  lifecycle: planning
+  owner: user:personal
+  system: workflow-management
+---
+# Example Changelog Entry
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: quartz-mermaid-support
+  description: "Added Mermaid diagram support to Quartz site"
+  tags:
+    - documentation
+    - feature
+  annotations:
+    changelog.version: "2025-01-11"
+    changelog.type: "feature"
+    changelog.project: "quartz"
+spec:
+  type: changelog
+  owner: user:personal
+  system: workflow-management

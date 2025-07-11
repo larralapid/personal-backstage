@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: Personal Infrastructure Hub
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: Personal Infrastructure
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -93,6 +93,30 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
+        
+    # Personal infrastructure catalog
+    - type: file
+      target: ../../examples/personal-infrastructure.yaml
+      rules:
+        - allow: [System, Component, Resource]
+        
+    # Personal organization
+    - type: file
+      target: ../../examples/personal-org.yaml
+      rules:
+        - allow: [User, Group]
+        
+    # Data templates
+    - type: file
+      target: ../../examples/data-templates.yaml
+      rules:
+        - allow: [Template, Resource]
+        
+    # Backlog and changelog templates
+    - type: file
+      target: ../../examples/backlog-templates.yaml
+      rules:
+        - allow: [Template, Component, Resource]
 
     ## Uncomment these lines to add more example data
     # - type: url
