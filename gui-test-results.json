@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-07-11T02:52:24.420Z",
+  "frontend": {
+    "status": "healthy",
+    "errors": [
+      "Loaded config from app-config.yaml\n",
+      "(node:19793) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n",
+      "<i> [webpack-dev-server] Project is running at:\n",
+      "<i> [webpack-dev-server] Loopback: http://localhost:3000/, http://[::1]:3000/\n<i> [webpack-dev-server] Content not from webpack is served from '/Users/larralapid/Desktop/personal-backstage/packages/app/public' directory\n<i> [webpack-dev-server] 404s will fallback to '/index.html'\n",
+      "<i> [webpack-dev-middleware] wait until bundle finished: /create\n",
+      "<i> [webpack-dev-middleware] wait until bundle finished: /\n",
+      "Browse Catalog returned 404",
+      "View Components returned 404",
+      "View Systems returned 404",
+      "Create Menu returned 404",
+      "Search returned 404"
+    ],
+    "warnings": []
+  },
+  "backend": {
+    "status": "native_deps_failed",
+    "errors": [
+      "node:internal/modules/cjs/loader:1369\n  const err = new Error(message);\n              ^\n\nError: Cannot find module './out/isolated_vm'\nRequire stack:\n- /Users/larralapid/Desktop/personal-backstage/node_modules/isolated-vm/isolated-vm.js\n- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/lib/templating/SecureTemplater.cjs.js\n- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/templateActionHandler.cjs.js\n- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/template.cjs.js\n- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/ScaffolderPlugin.cjs.js\n- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/index.cjs.js\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1369:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\n    at Module._load (node:internal/modules/cjs/loader:1179:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Module.require (node:internal/modules/cjs/loader:1449:12)\n    at require (node:internal/modules/helpers:135:16)\n    at Object.<anonymous> (/Users/larralapid/Desktop/personal-backstage/node_modules/isolated-vm/isolated-vm.js:1:18)\n    at Module._compile (node:internal/modules/cjs/loader:1692:14) {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [\n    '/Users/larralapid/Desktop/personal-backstage/node_modules/isolated-vm/isolated-vm.js',\n    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/lib/templating/SecureTemplater.cjs.js',\n    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/templateActionHandler.cjs.js',\n    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/template.cjs.js',\n    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/ScaffolderPlugin.cjs.js',\n    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/index.cjs.js'\n  ]\n}\n\nNode.js v24.3.0\n"
+    ],
+    "warnings": []
+  },
+  "api": {
+    "status": "failed",
+    "errors": [
+      "/api/catalog/entities: ",
+      "/api/catalog/entities/by-name/component/default/desktop-projects: ",
+      "/api/catalog/locations: ",
+      "/api/auth/providers: ",
+      "/api/techdocs/static/docs: "
+    ],
+    "warnings": []
+  },
+  "catalog": {
+    "status": "failed",
+    "errors": [
+      "Catalog test failed: "
+    ],
+    "warnings": []
+  },
+  "templates": {
+    "status": "failed",
+    "errors": [
+      "Templates test failed: "
+    ],
+    "warnings": []
+  },
+  "plugins": {
+    "status": "failed",
+    "errors": [
+      "Catalog plugin returned 404",
+      "API Docs plugin returned 404",
+      "TechDocs plugin returned 404",
+      "Create plugin returned 404",
+      "Search plugin returned 404"
+    ],
+    "warnings": []
+  },
+  "console": {
+    "errors": [],
+    "warnings": []
+  },
+  "network": {
+    "errors": [],
+    "warnings": []
+  },
+  "performance": {
+    "metrics": {
+      "pageLoadTime": 1
+    },
+    "issues": []
+  }
+}

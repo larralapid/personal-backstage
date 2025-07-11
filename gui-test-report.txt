@@ -1,0 +1,99 @@
+
+# Backstage GUI & API Automated Test Report
+Generated: 2025-07-11T02:52:34.674Z
+
+## 🚀 Application Status
+Frontend: ✅ healthy
+Backend: 🔧 native_deps_failed
+API: ❌ failed
+
+## 📊 Component Health
+Catalog: ❌ failed
+Templates: ❌ failed
+Plugins: ❌ failed
+
+## 🐛 Issues Found
+FRONTEND ERRORS:
+  - Loaded config from app-config.yaml
+
+  - (node:19793) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+  - <i> [webpack-dev-server] Project is running at:
+
+  - <i> [webpack-dev-server] Loopback: http://localhost:3000/, http://[::1]:3000/
+<i> [webpack-dev-server] Content not from webpack is served from '/Users/larralapid/Desktop/personal-backstage/packages/app/public' directory
+<i> [webpack-dev-server] 404s will fallback to '/index.html'
+
+  - <i> [webpack-dev-middleware] wait until bundle finished: /create
+
+  - <i> [webpack-dev-middleware] wait until bundle finished: /
+
+  - Browse Catalog returned 404
+  - View Components returned 404
+  - View Systems returned 404
+  - Create Menu returned 404
+  - Search returned 404
+BACKEND ERRORS:
+  - node:internal/modules/cjs/loader:1369
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module './out/isolated_vm'
+Require stack:
+- /Users/larralapid/Desktop/personal-backstage/node_modules/isolated-vm/isolated-vm.js
+- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/lib/templating/SecureTemplater.cjs.js
+- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/templateActionHandler.cjs.js
+- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/template.cjs.js
+- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/ScaffolderPlugin.cjs.js
+- /Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/index.cjs.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1369:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1449:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/Users/larralapid/Desktop/personal-backstage/node_modules/isolated-vm/isolated-vm.js:1:18)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/larralapid/Desktop/personal-backstage/node_modules/isolated-vm/isolated-vm.js',
+    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/lib/templating/SecureTemplater.cjs.js',
+    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/templateActionHandler.cjs.js',
+    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/scaffolder/actions/builtin/fetch/template.cjs.js',
+    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/ScaffolderPlugin.cjs.js',
+    '/Users/larralapid/Desktop/personal-backstage/node_modules/@backstage/plugin-scaffolder-backend/dist/index.cjs.js'
+  ]
+}
+
+Node.js v24.3.0
+
+API ERRORS:
+  - /api/catalog/entities: 
+  - /api/catalog/entities/by-name/component/default/desktop-projects: 
+  - /api/catalog/locations: 
+  - /api/auth/providers: 
+  - /api/techdocs/static/docs: 
+CATALOG ERRORS:
+  - Catalog test failed: 
+TEMPLATES ERRORS:
+  - Templates test failed: 
+PLUGINS ERRORS:
+  - Catalog plugin returned 404
+  - API Docs plugin returned 404
+  - TechDocs plugin returned 404
+  - Create plugin returned 404
+  - Search plugin returned 404
+
+## 📈 Performance Metrics
+Page Load Time: 1ms
+
+## 🔍 What These Results Mean
+✅ Frontend is working correctly - you can browse the catalog and navigate the UI
+🔧 Backend has native dependency issues - templates and scaffolding may not work
+
+## 🛠️ Recommended Actions
+🔧 Install build tools: Run `npm install -g node-gyp` and install Xcode command line tools
+🚀 Use frontend-only mode: `yarn workspace app start` for basic functionality

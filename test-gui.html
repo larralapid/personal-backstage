@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backstage Test</title>
+  <script>
+    window.testErrors = [];
+    window.testWarnings = [];
+    
+    // Capture console errors
+    const originalError = console.error;
+    console.error = function(...args) {
+      window.testErrors.push(args.join(' '));
+      originalError.apply(console, args);
+    };
+    
+    // Capture console warnings
+    const originalWarn = console.warn;
+    console.warn = function(...args) {
+      window.testWarnings.push(args.join(' '));
+      originalWarn.apply(console, args);
+    };
+    
+    // Test basic JavaScript execution
+    setTimeout(() => {
+      // Try to access common Backstage elements
+      const catalog = document.querySelector('[data-testid="catalog"]');
+      const sidebar = document.querySelector('[data-testid="sidebar"]');
+      
+      if (!catalog) {
+        window.testErrors.push('Catalog element not found');
+      }
+      
+      if (!sidebar) {
+        window.testErrors.push('Sidebar element not found');
+      }
+      
+      // Check for React mount
+      if (!window.React && !document.querySelector('[data-reactroot]')) {
+        window.testErrors.push('React application not mounted');
+      }
+      
+      // Save results
+      const results = {
+        errors: window.testErrors,
+        warnings: window.testWarnings,
+        reactMounted: !!window.React || !!document.querySelector('[data-reactroot]'),
+        timestamp: new Date().toISOString()
+      };
+      
+      console.log('TEST_RESULTS:', JSON.stringify(results));
+    }, 5000);
+  </script>
+</head>
+<body>
+  <iframe src="http://localhost:3000" width="100%" height="600"></iframe>
+</body>
+</html>
