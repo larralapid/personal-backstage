@@ -1,8 +1,8 @@
-# Personal Backstage
+# Self Catalog
 
 > A personalized infrastructure management hub built with Backstage for tracking projects, data, workflows, and changelog as a solo developer.
 
-![Personal Backstage Dashboard](https://raw.githubusercontent.com/backstage/backstage/master/docs/assets/header.png)
+![Self Catalog Dashboard](https://raw.githubusercontent.com/backstage/backstage/master/docs/assets/header.png)
 
 ## 🎯 Overview
 
@@ -54,8 +54,8 @@ Current projects being tracked:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/larralapid/personal-backstage.git
-   cd personal-backstage
+   git clone https://github.com/larralapid/self-catalog.git
+   cd self-catalog
    ```
 
 2. **Install dependencies**
@@ -139,7 +139,7 @@ Some backend features require native compilation:
 
 ### Project Structure
 ```
-personal-backstage/
+self-catalog/
 ├── packages/
 │   ├── app/           # Frontend React application
 │   └── backend/       # Backend Node.js services

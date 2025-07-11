@@ -1,0 +1,30 @@
+{
+  "totalIssues": 10,
+  "criticalIssues": 5,
+  "totalStoryPoints": 80,
+  "avgStoryPoints": 8,
+  "phaseDistribution": {
+    "Phase 1": 7,
+    "Phase 2": 1,
+    "Phase 3": 1,
+    "Phase 4": 1
+  },
+  "priorityDistribution": {
+    "Critical": 5,
+    "High": 3,
+    "Medium": 1,
+    "Low": 1
+  },
+  "estimatedDuration": "2-3 weeks",
+  "riskFactors": [
+    "Native dependency build failures",
+    "Backend API connectivity issues",
+    "Frontend routing problems"
+  ],
+  "recommendations": [
+    "Focus on Phase 1 critical issues first",
+    "Consider Docker alternative for dependency issues",
+    "Set up automated testing for backend APIs",
+    "Implement monitoring for frontend routing"
+  ]
+}

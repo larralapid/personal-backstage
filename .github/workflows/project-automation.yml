@@ -1,0 +1,27 @@
+# GitHub Actions Workflow for Project Automation
+
+name: Project Automation
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened]
+  pull_request:
+    types: [opened, closed, merged]
+  project_card:
+    types: [created, moved]
+
+jobs:
+  update-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add to Project
+        uses: actions/add-to-project@v0.4.0
+        with:
+          project-url: https://github.com/users/larralapid/projects/16
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Auto-assign Priority
+        run: echo "Auto-assigning priority based on labels"
+      
+      - name: Auto-assign Phase
+        run: echo "Auto-assigning phase based on issue content"

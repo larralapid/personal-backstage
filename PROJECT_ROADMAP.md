@@ -1,7 +1,7 @@
-# Personal Backstage Development Roadmap
+# Self Catalog Development Roadmap
 
 ## 🎯 Project Overview
-This roadmap outlines the sequential development plan for the Personal Backstage project, organized by phases and dependencies.
+This roadmap outlines the sequential development plan for the Self Catalog project, organized by phases and dependencies.
 
 ## 📋 GitHub Project
 **Project URL**: https://github.com/users/larralapid/projects/16
