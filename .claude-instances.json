@@ -1,0 +1,26 @@
+{
+  "active_instances": {
+    "instance_main": {
+      "id": "claude-main",
+      "started_at": "2025-07-11T03:35:00Z",
+      "current_branch": "main",
+      "working_on": "issue-8-build-tools-and-rename",
+      "last_activity": "2025-07-11T03:35:00Z",
+      "status": "active"
+    }
+  },
+  "coordination_rules": {
+    "check_before_branch": true,
+    "check_before_commit": true,
+    "announce_major_changes": true,
+    "conflict_resolution": "timestamp_wins"
+  },
+  "reserved_branches": {
+    "feature/issue-8-build-tools": "claude-main"
+  },
+  "shared_resources": {
+    "package.json": "coordinate_required",
+    "README.md": "coordinate_required",
+    "yarn.lock": "merge_conflicts_expected"
+  }
+}
